@@ -22,13 +22,15 @@ export default {
           id: '1',
           name: 'Manuel Lorenz',
           phone: '+1 987 323 12 31',
-          email: 'manuel@loc.host'
+          email: 'manuel@loc.host',
+          isFavourite: true
         },
         {
           id: '2',
           name: 'Julie Lorenz',
           phone: '+1 932 323 12 31',
-          email: 'julie@loc.host'
+          email: 'julie@loc.host',
+          isFavourite: false
         }
       ]
     }
@@ -100,6 +102,7 @@ header {
   cursor: pointer;
   border: 1px solid #ff0077;
   background-color: #ff0077;
+  margin: 0 0.25rem;
   color: white;
   padding: 0.5rem 3rem;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
