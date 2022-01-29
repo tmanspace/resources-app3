@@ -1,6 +1,6 @@
 <template>
   <li>
-    <h4>{{friend.name}}</h4>
+    <h2>{{friend.name}}</h2>
     <button @click="toggleDetails">Show Details</button>
     <ul v-show="detailsVisible">
       <li>Phone: {{friend.phone}}</li>
@@ -12,15 +12,10 @@
 <script>
 export default {
   name: "FriendContact.vue",
+  props: ['friend'],
   data() {
     return {
       detailsVisible: false,
-      friend: {
-        id: '1',
-        name: 'Manuel',
-        phone: '1',
-        email: 'manuel@as.cs'
-      }
     }
   },
   methods: {
@@ -31,6 +26,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
 </style>
