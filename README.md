@@ -1,4 +1,7 @@
-# resources-app3
+# Resources app
+
+## About 
+Dummy application to know more about Vue 3 features. Watching the course and learning Vue 3
 
 ## Project setup
 ```
