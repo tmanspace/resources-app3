@@ -2,7 +2,12 @@
   <section id="contacts">
     <h1>My friends</h1>
     <ul>
-      <friend-contact v-for="friend in friends" :key="friend.id" :friend="friend"></friend-contact>
+      <friend-contact
+          v-for="friend in friends"
+          :key="friend.id"
+          :friend="friend"
+          @toggle-favourite="toggleFavProp">
+      </friend-contact>
     </ul>
   </section>
 </template>
@@ -33,6 +38,12 @@ export default {
           isFavourite: false
         }
       ]
+    }
+  },
+  methods: {
+    toggleFavProp(id) {
+      const friendFounded = this.friends.find(friend => friend.id === id)
+      friendFounded.isFavourite = !friendFounded.isFavourite
     }
   }
 }
