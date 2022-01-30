@@ -1,6 +1,7 @@
 <template>
   <section id="contacts">
     <h1>My friends</h1>
+    <new-friend @add-friend="addFriend"></new-friend>
     <ul>
       <friend-contact
           v-for="friend in friends"
@@ -14,11 +15,13 @@
 
 <script>
 import FriendContact from "@/components/FriendContact";
+import NewFriend from "@/components/NewFriend";
 
 export default {
   name: "App.vue",
   components: {
-    'friend-contact': FriendContact
+    'friend-contact': FriendContact,
+    'new-friend': NewFriend
   },
   data() {
     return {
@@ -44,6 +47,9 @@ export default {
     toggleFavProp(id) {
       const friendFounded = this.friends.find(friend => friend.id === id)
       friendFounded.isFavourite = !friendFounded.isFavourite
+    },
+    addFriend(newFriend) {
+      this.friends.push(newFriend)
     }
   }
 }
