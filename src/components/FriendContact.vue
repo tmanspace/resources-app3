@@ -13,7 +13,12 @@
 <script>
 export default {
   name: "FriendContact.vue",
-  props: ['friend'],
+  props: {
+    friend: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       detailsVisible: false,
