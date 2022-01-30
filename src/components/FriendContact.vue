@@ -7,7 +7,9 @@
       <li>Phone: {{friend.phone}}</li>
       <li>Email: {{friend.email}}</li>
     </ul>
+    <button class="deleteButton" @click="$emit('delete', friend.id)">Delete friend</button>
   </li>
+
 </template>
 
 <script>
@@ -19,7 +21,7 @@ export default {
       required: true
     }
   },
-  emits: ['toggle-favourite'],
+  emits: ['toggle-favourite', 'delete'],
   // emits: {
   //   'toggle-favourite': function(id) {
   //     if (id) return true;
@@ -46,5 +48,15 @@ export default {
 </script>
 
 <style >
+
+#app .deleteButton {
+  margin-top: 20px;
+  background: darkorchid;
+  border: none;
+}
+
+#app .deleteButton:hover {
+  background: blueviolet;
+}
 
 </style>
