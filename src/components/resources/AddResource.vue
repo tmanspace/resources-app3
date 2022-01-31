@@ -1,4 +1,12 @@
 <template>
+  <base-modal title="Invalid data" v-if="isInvalid">
+    <template #default>
+      <p>One of the inputs is empty. Please add data</p>
+    </template>
+    <template #actions>
+      <base-button @click="isInvalid = !isInvalid">Okay</base-button>
+    </template>
+  </base-modal>
   <base-card>
     <h2>Add resource</h2>
     <form @submit.prevent="fetchResource">
@@ -16,6 +24,7 @@
       </div>
       <base-button type="submit">Add</base-button>
     </form>
+
   </base-card>
 </template>
 
@@ -25,6 +34,7 @@ export default {
   components: {},
   data() {
     return {
+      isInvalid: false,
       newResource: {
         id: new Date().toISOString(),
         title: '',
@@ -38,7 +48,10 @@ export default {
   ],
   methods: {
     fetchResource() {
-      // CHECK
+      if (this.newResource.title.trim() === '' || this.newResource.link.trim() === '' || this.newResource.description.trim() === '') {
+        this.isInvalid = true;
+        return;
+      }
       this.addResource(this.newResource)
       this.newResource = {
         id: new Date().toISOString(),
@@ -52,6 +65,11 @@ export default {
 </script>
 
 <style scoped>
+
+dialog p {
+  margin: 0;
+  color: #666;
+}
 
 h2 {
   margin: 0 0 1rem;
