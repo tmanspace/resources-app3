@@ -1,18 +1,18 @@
 <template>
   <base-card>
     <h2>Add resource</h2>
-    <form>
+    <form @submit.prevent="fetchResource">
       <div class="form-control">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title">
+        <input type="text" name="title" id="title" v-model="newResource.title">
       </div>
       <div class="form-control">
         <label for="link">Link</label>
-        <input type="url" name="link" id="link">
+        <input type="url" name="link" id="link" v-model="newResource.link">
       </div>
       <div class="form-control">
         <label for="desc">Description</label>
-        <textarea rows="3" name="desc" id="desc"> </textarea>
+        <textarea rows="3" name="desc" id="desc" v-model="newResource.description"> </textarea>
       </div>
       <base-button type="submit">Add</base-button>
     </form>
@@ -22,8 +22,32 @@
 <script>
 export default {
   name: "AddResource",
-  components: {}
-
+  components: {},
+  data() {
+    return {
+      newResource: {
+        id: new Date().toISOString(),
+        title: '',
+        link: '',
+        description: ''
+      }
+    }
+  },
+  inject: [
+    'addResource'
+  ],
+  methods: {
+    fetchResource() {
+      // CHECK
+      this.addResource(this.newResource)
+      this.newResource = {
+        id: new Date().toISOString(),
+        title: '',
+        link: '',
+        description: ''
+      }
+    }
+  }
 }
 </script>
 
