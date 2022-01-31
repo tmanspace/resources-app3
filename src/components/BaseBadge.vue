@@ -5,6 +5,7 @@
 <script>
 export default {
   props: ['type', 'caption'],
+  name: 'BaseBadge',
   computed: {
     classes() {
       return {
@@ -16,7 +17,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;

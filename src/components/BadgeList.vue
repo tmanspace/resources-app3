@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <base-card>
     <h2>Available Badges</h2>
     <ul>
       <li>
@@ -9,27 +9,22 @@
         <base-badge type="author" caption="AUTHOR"></base-badge>
       </li>
     </ul>
-  </section>
+  </base-card>
 </template>
 
 <script>
-
-import baseBadge from "@/components/BaseBadge";
-
 export default {
   name: 'BadgeList',
-  components: {
-    'base-badge': baseBadge
-  }
 }
-
 </script>
 
-<style>
+<style scoped>
+
 section h2 {
   margin: 0.5rem 0;
   color: #3a3a3a;
 }
+
 ul {
   list-style: none;
   margin: 0;
