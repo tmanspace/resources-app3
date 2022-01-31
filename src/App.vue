@@ -15,8 +15,9 @@
       <button @click="setComponent('active-goals')">Active goals</button>
       <button @click="setComponent('manage-goals')">Manage goals</button>
     </base-card>
-    <component :is="componentTab"></component>
-
+    <keep-alive>
+      <component :is="componentTab"></component>
+    </keep-alive>
   </div>
 </template>
 
