@@ -1,17 +1,19 @@
 <template>
-<dialog open>
-  <header>
-    <slot name="header">
-      <h3>{{title}}</h3>
-    </slot>
-  </header>
-  <main>
-    <slot></slot>
-  </main>
-  <menu>
-    <slot name="actions"></slot>
-  </menu>
-</dialog>
+  <teleport to="body">
+    <dialog open>
+      <header>
+        <slot name="header">
+          <h3>{{title}}</h3>
+        </slot>
+      </header>
+      <main>
+        <slot></slot>
+      </main>
+      <menu>
+        <slot name="actions"></slot>
+      </menu>
+    </dialog>
+  </teleport>
 </template>
 
 <script>
