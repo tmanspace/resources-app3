@@ -37,7 +37,7 @@ button:hover, button:active {
 }
 
 .flat:hover, .flat:active {
-  background: #5a48a3;
-  color: white;
+  background: #ddd2ff;
+  color: #5a48a3;
 }
 </style>
