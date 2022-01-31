@@ -1,11 +1,16 @@
 <template>
   <ul>
-
+    <resource-item v-for="res in storedResources" :key="res.id" :item="res"></resource-item>
   </ul>
 </template>
 
 <script>
+import resourceItem from "@/components/resources/ResourceItem";
+
 export default {
+  components: {
+    'resource-item': resourceItem
+  },
   data() {
     return {
       storedResources: [
