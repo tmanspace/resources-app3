@@ -3,7 +3,7 @@
     <base-card>
       <header>
         <h3>{{item.title}}</h3>
-        <button>Delete</button>
+        <base-button mode="flat">Delete</base-button>
       </header>
       <p>{{item.description}}</p>
       <nav>
@@ -14,9 +14,10 @@
 </template>
 
 <script>
+import BaseButton from "@/components/UI/BaseButton";
 export default {
   name: "ResourceItem",
-  components: {},
+  components: {BaseButton},
 
   props: ['item']
 }
