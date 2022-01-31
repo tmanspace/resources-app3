@@ -15,6 +15,7 @@ export default {
 button {
   padding: 0.5rem 1rem;
   background: #5a48a3;
+  margin-right: 1rem;
   color: white;
   border: none;
   transition: background-color 0.5s, color 0.5s;

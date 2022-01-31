@@ -1,35 +1,40 @@
 <template>
   <the-header title="LeSources"></the-header>
-  <stored-resources :resources="storedResources"></stored-resources>
+  <the-resources></the-resources>
 </template>
 
 <script>
-import storedResources from "@/components/resources/StoredResources";
 import theHeader from "@/components/layout/TheHeader";
+import theResources from "@/components/resources/TheResources";
 
 export default {
   components: {
-    'stored-resources': storedResources,
+    'the-resources': theResources,
     'the-header': theHeader
   },
   data() {
     return {
-      storedResources: [
-        {
-          id: '213124',
-          title: 'Official guide',
-          description: 'The official Vue.js documentation.',
-          link: 'https://vuejs.org'
-        },
-        {
-          id: '4234134',
-          title: 'Google',
-          description: 'The Search engine to find all you need.',
-          link: 'https://google.com'
-        }
-      ]
+      // storedResources: [
+      //   {
+      //     id: '213124',
+      //     title: 'Official guide',
+      //     description: 'The official Vue.js documentation.',
+      //     link: 'https://vuejs.org'
+      //   },
+      //   {
+      //     id: '4234134',
+      //     title: 'Google',
+      //     description: 'The Search engine to find all you need.',
+      //     link: 'https://google.com'
+      //   }
+      // ]
     }
-  }
+  },
+  // provide() {
+    // return {
+    //   resources: this.storedResources
+    // }
+  // }
 };
 </script>
 
