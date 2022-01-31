@@ -1,5 +1,5 @@
 <template>
-<button :class="mode" :type="type">
+<button :class="mode" >
   <slot></slot>
 </button>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "BaseButton",
-  props: ['type', 'mode']
+  props: ['mode']
 }
 </script>
 
@@ -20,6 +20,7 @@ button {
   border: none;
   transition: background-color 0.5s, color 0.5s;
   cursor: pointer;
+  min-width: 120px;
 }
 
 button:focus {
