@@ -5,7 +5,9 @@
       <button>Delete</button>
     </header>
     <p>{{item.description}}</p>
-    <nav><a :href="item.link">View resource</a></nav>
+    <nav>
+      <a :href="item.link">View resource</a>
+    </nav>
   </li>
 </template>
 
@@ -17,5 +19,33 @@ export default {
 </script>
 
 <style scoped>
+li {
+  list-style: none;
+  max-width: 40rem;
+  margin: auto auto 1rem;
+}
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a:hover, a:active {
+  color: #c89300;
+}
 </style>
